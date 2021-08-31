@@ -1,0 +1,4 @@
+docker build -t load-balance-nginx .
+docker run -p 8080:80 -d load-balance-nginx
+
+docker run -d --name nginx-container -e TZ=UTC -p 8080:80  -v /Users/michaelyared/lb/test/application/nginx-docker/nginx/nginx.conf:/etc/nginx/nginx.conf ubuntu/nginx:1.18-21.04_beta
